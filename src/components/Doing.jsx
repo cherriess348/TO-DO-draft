@@ -7,9 +7,9 @@ export default function Doing() {
     const task = ()=>{setCount(count+1)}
   return (
     <> 
-<div className="border border-white/10 rounded-[5px] p-2 px-4 pt-5 bg-white/10 backdrop-blur-md absolute z-50 shadow-lg mt-[150px]">
+    <div className="border border-white/10 rounded-[5px] p-2 px-4 pt-5 bg-white/10 backdrop-blur-md absolute z-10 shadow-lg mt-[150px]">
         <div className='flex gap-7' id="btn" >
-            <h3>{count}</h3>
+            
             <input type="text" placeholder="To do" className='border px-2 rounded-[5px]'/> 
             <FaAirFreshener className='text-3xl' onClick={task} />
         </div>
@@ -20,7 +20,7 @@ export default function Doing() {
         <p>kaeoaw</p>
         
 
-    </div>
+     </div>
     </>
    
   )
