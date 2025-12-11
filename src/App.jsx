@@ -2,8 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Counter from './Counter.jsx'
-import Doing from './Doing.jsx'
+import Account from "./components/Account.jsx";
+import Sidebar from "./components/Sidebar.jsx";
+import Todo from "./components/Todo.jsx";
+
+ 
  
 
 function App() {
@@ -11,22 +14,18 @@ function App() {
 
   return (
     <>
-    <div className='flex  items-center mt-4  flex-col gap-6  bg-amber-800'>
-         <Counter></Counter>
-         
-        <Doing></Doing>
-        <div className='flex flex-col mx-10 mt-[100px]'>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, iste eaque saepe minus aperiam corrupti aliquid suscipit. Enim, dolores distinctio quibusdam sint ipsam earum autem rerum, iste delectus ea illum?</div>
-
-         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, iste eaque saepe minus aperiam corrupti aliquid suscipit. Enim, dolores distinctio quibusdam sint ipsam earum autem rerum, iste delectus ea illum?</div>
-
-         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, iste eaque saepe minus aperiam corrupti aliquid suscipit. Enim, dolores distinctio quibusdam sint ipsam earum autem rerum, iste delectus ea illum?</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, iste eaque saepe minus aperiam corrupti aliquid suscipit. Enim, dolores distinctio quibusdam sint ipsam earum autem rerum, iste delectus ea illum?</div>
-
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, iste eaque saepe minus aperiam corrupti aliquid suscipit. Enim, dolores distinctio quibusdam sint ipsam earum autem rerum, iste delectus ea illum?</div>
-        </div>
-         
-    </div>
+    <body  className='bg-blue-950 text-amber-50 font-serif
+'>
+      <div className='m-0 flex flex-col items-center mt-9'>
+             <Todo></Todo>
+            <br /><br /><br /><br />
+            <Sidebar></Sidebar>
+            <Account></Account>
+      </div>
+      
+      
+    </body>
+   
         
 
     </>
