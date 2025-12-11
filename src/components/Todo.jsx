@@ -1,39 +1,51 @@
+import { useState } from 'react';
 
-import React, { useState } from 'react';
+export default function Todo() {
 
+  const [tasks, setTasks] = useState([]); 
+  const [newtask, setNewtask] = useState("");
 
-export default function todo() {
-
-const [tasks, setTasks] = useState([]); // array of tasks
-  const [todo, setTodo] = useState("");   // current input value
-
-  // Update input value
-  function handleInputChange(event) {
-    setTodo(event.target.value);
+  function handle(event){
+    setNewtask(event.target.value);
   }
 
-  // Add new task to list
-  function handleAddTask(event) {
-    event.preventDefault(); // prevent page reload
-    if (todo.trim() === "") return;      // ignore empty input
-    setTasks([...tasks, {id:Date.now(),complete: false, text:input}]);          // add new task
-    setTodo(""); 
-}
-function Inputting(e){
-    setTodo(e.target.value)
-}
-
-
+  function addTask() {
+    if (newtask.trim()) {
+      setTasks([...tasks, { id: Date.now(), text: newtask, complete: false }]);
+    }
+    setNewtask("");
+  }
 
   return (
-    <>  
-         <div action=""className='border px-9 py-5 rounded-2xl flex gap-4'>
-            <input value={todo} onChange={Inputting}    type="text"className="w-70 h-10 rounded-3xl bg-amber-400/90 text-black p-5 " placeholder='To do...' />
-            <button onClick={handleAddTask}   className="flex items-center justify-center rounded-3xl bg-red-700  text-black h-10 px-5 ">Add</button>
-         </div>
-      
-    
-    
-    </>
-  )
+    <div className='border border-amber-300  px-9 py-5 rounded-2xl flex flex-col gap-3 items-center'>
+      <div className="flex gap-x-2">
+        <input
+          value={newtask}
+          onChange={handle}
+          type="text"
+          className="w-72 h-12 rounded-2xl bg-amber-400/90 text-black p-4"
+          placeholder="To do..."
+        />
+        <button
+          onClick={addTask}
+          className="flex items-center justify-center text-white border-[1px] border-white/30 rounded-[2px]  h-12 px-5 "
+        >
+          Add
+        </button>
+      </div>
+
+      {/* Correct: use tasks.map */}
+      <ul className="text-left w-92 mt-4">
+        {tasks.map(task => (
+          <li
+            key={task.id}
+            className="bg-white/20 text-white p-3 rounded-lg mb-2 "
+          >
+            {task.text}
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  );
 }
