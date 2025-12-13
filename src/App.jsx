@@ -18,7 +18,7 @@ function App() {
 
     setCategories([...categories, newCategory]);
     setSelectedCategory(newCategory);
-    setSidebarOpen(false); // close on mobile
+    setSidebarOpen(false); 
   }
 
   return (
